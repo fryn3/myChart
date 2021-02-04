@@ -7,11 +7,6 @@ ApplicationWindow {
     height: width * 0.75
     visible: true
 
-//    maximumWidth: width
-//    maximumHeight: height
-//    minimumHeight: height
-//    minimumWidth: width
-
     MyChart {
         id: _view
         anchors.top: parent.top
@@ -31,7 +26,13 @@ ApplicationWindow {
             _view.addPoint(indexLine, x, y)
         }
         onClickedRadio: {
+            root.maximumWidth = widthParam
+            root.minimumWidth = widthParam
+            root.maximumHeight = widthParam * 0.75
+            root.minimumHeight = widthParam * 0.75
             root.width = widthParam
+            root.height = widthParam * 0.75
         }
+
     }
 }
