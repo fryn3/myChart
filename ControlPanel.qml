@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.12
 ScrollView {
     id: root
     signal addpoint(int indexLine, int x, int y)
+    signal clickedRadio(int widthParam)
     ColumnLayout {
         Text {
             id: lableAddPoint
@@ -92,7 +93,7 @@ ScrollView {
             y: 50
             checked: true
             text: qsTr("600")
-            onClicked: width = 600
+            onClicked: clickedRadio(600)
         }
         RadioButton {
             id: rdb1200
@@ -102,6 +103,7 @@ ScrollView {
             anchors.rightMargin: 0
             checked: false
             text: qsTr("1200")
+            onClicked: clickedRadio(1200)
         }
     }
 }
